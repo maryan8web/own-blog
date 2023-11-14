@@ -8,6 +8,10 @@ interface Props {
 }
 
 const PostsGrid = ({ posts }: Props) => {
+  if (!posts || posts.length === 0) {
+    return <p>No posts available</p>;
+  }
+
   return (
     <ul className={classes.grid}>
       {posts.map((post) => (
